@@ -8,10 +8,10 @@ Azure container registries are compatible with a multitude of services and orche
 ACR will parse headers using the following format:
 
 ```HTTP
-X-Meta-Source-Client: <cloud>/<service>/<optionalservicename>
+X-Meta-Source-Client: <cloud|ide>/<service>/<optionalservicename>
 ```
 
-* `cloud`: Azure, Azure Stack, or other government- or country-specific Azure cloud.
+* `cloud|ide`: Azure, Azure Stack, or other government- or country-specific Azure cloud. For IDE's, additional values to help scope will be used.
 * `service`: The name of the service.
 * `optionalservicename`: An optional parameter for services with subservices, or for specifying a SKU. For example, Web Apps corresponds to `azure/app-service/web-apps`).
 
@@ -44,21 +44,31 @@ The values we ask ACR partners to use when populating the `X-Meta-Source-Client`
 | US Gov                    | `auzreusgov/`                           |
 | US DOD                    | `auzreusdod/`                           |
 
-
-| Service name              | Header                                  |
+| IDE                       | Header                                  |
 | ------------------------- | --------------------------------------- |
-| App Service - Logic Apps  | `azure/app-service/logic-apps`          |
-| App Service - Web Apps    | `azure/app-service/web-apps`            |
-| Azure Container Instance  | `azure/aci`                             |
-| Azure Container Service   | `azure/acs`                             |
-| Azure Kubernetes Service  | `azure/aks`                             |
-| Azure Container Builder   | `azure/acb`                             |
-| Batch                     | `azure/batch`                           |
-| Cloud Console             | `azure/cloud-console`                   |
-| Functions                 | `azure/functions`                       |
-| HDInsight                 | `azure/hdinsight`                       |
-| Internet of Things - Hub  | `azure/iot/hub`                         |
-| Jenkins                   | `azure/jenkins`                         |
-| Machine Learning          | `azure/ml`                              |
-| Service Fabric            | `azure/service-fabric`                  |
-| VSTS                      | `azure/vsts`                            |
+| Visual Studio             | `vs/`                                   |
+| Visual Studio Code        | `vscode/`                               |
+| Visual Studio for Mac     | `vs4mac/`                               |
+
+
+| Service/IDE name                | Header                                  |
+| ------------------------------- | --------------------------------------- |
+| App Service - Logic Apps        | `azure/app-service/logic-apps`          |
+| App Service - Web Apps          | `azure/app-service/web-apps`            |
+| Azure Container Instance        | `azure/aci`                             |
+| Azure Container Service         | `azure/acs`                             |
+| Azure Kubernetes Service        | `azure/aks`                             |
+| Azure Container Builder         | `azure/acb`                             |
+| Batch                           | `azure/batch`                           |
+| Cloud Console                   | `azure/cloud-console`                   |
+| Functions                       | `azure/functions`                       |
+| HDInsight                       | `azure/hdinsight`                       |
+| Internet of Things - Hub        | `azure/iot/hub`                         |
+| Jenkins                         | `azure/jenkins`                         |
+| Machine Learning                | `azure/ml`                              |
+| Service Fabric                  | `azure/service-fabric`                  |
+| VSTS                            | `azure/vsts`                            |
+| VS Container Tooling            | `vs/container`                          |
+| VS Publishing                   | `vs/publish`                            |
+| VS Service Fabric Publishing    | `vs/sf/publish`                         |
+| VS Code Publishing              | `vscode/publish`                        |
